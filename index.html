@@ -3,118 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elektromateriāli & Industriālās Komponentes</title>
-    <!-- Moderns dizaina ietvars, kas nodrošina centrēšanu un formu stilu -->
-    <script src="https://tailwindcss.com"></script>
-    <!-- Ikonas -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <title>NL Elektro - Automātika un Elektromontāža</title>
+    
+    <!-- Ikonas sociālajiem tīkliem -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        .partner-logo { height: 26px; filter: grayscale(100%) brightness(1.6); opacity: 0.6; transition: all 0.3s; }
-        .partner-logo:hover { filter: grayscale(0%) brightness(1); opacity: 1; transform: scale(1.05); }
+        /* Pamata stili (NL Elektro industriālais stils - tumšs ar dzeltenu/oranžu akcentu) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* 1. Logo vieta augšā pa vidu */
+        .logo-area {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: #2a2a2a;
+            border: 3px solid #ffcc00; /* Zibens dzeltenais akcents */
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffcc00;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+        }
+
+        /* 2. Teksts ar nodarbošanos */
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .brand-subtitle {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* 3. Dropdown izvēlne navigācijai */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        .dropdown-btn {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            padding: 14px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #e6b800;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2a2a2a;
+            width: 100%;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            margin-top: 5px;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid #444;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3a3a3a;
+            color: #ffcc00;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* 4. Sociālie tīkli un kontakti */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 45px;
+        }
+
+        .social-btn {
+            background-color: #2a2a2a;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: #333;
+            border-color: #ffcc00;
+            transform: translateY(-2px);
+        }
+
+        .social-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* 5. Sadarbības partneri */
+        .partners-section {
+            margin-top: 20px;
+            border-top: 1px solid #333;
+            padding-top: 30px;
+        }
+
+        .partners-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #777777;
+            margin-bottom: 20px;
+        }
+
+        .partners-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        
+        .partners-logos:hover {
+            opacity: 0.9;
+        }
+
+        .partner-tag {
+            background-color: #222;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #ccc;
+            border: 1px solid #333;
+        }
     </style>
 </head>
-<body class="bg-[#0b0f17] text-gray-100 font-sans min-h-screen">
+<body>
 
-    <!-- NAVIGĀCIJAS JOSLA -->
-    <nav class="bg-[#111827] border-b border-gray-800 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold tracking-tight text-emerald-400">Elektro<span class="text-white">Komponentes</span></a>
-            <div class="flex space-x-6 text-sm font-medium text-gray-400">
-                <a href="index.html" class="text-emerald-400 hover:text-white transition">Sākums</a>
-                <a href="#produkti" class="hover:text-white transition">Produkti</a>
-                <a href="#kontakti" class="hover:text-white transition">Kontakti</a>
+    <div class="container">
+        
+        <!-- 1. Logo vieta pa vidu -->
+        <div class="logo-area">
+            <!-- Kad Tev būs bildes fails, aizvieto tekstu ar: <img src="logo.png" alt="NL Elektro Logo"> -->
+            <div class="logo-placeholder">NL Elektro</div>
+        </div>
+
+        <!-- 2. Nodarbošanās teksts -->
+        <h1 class="brand-name">NL ELEKTRO</h1>
+        <p class="brand-subtitle">Rūpnieciskā automātika &bull; Elektromontāža &bull; Skapju būvniecība</p>
+
+        <!-- 3. Dropdown izvēlne lapām -->
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropdown-btn">
+                Izvēlies sadaļu... <i class="fas fa-chevron-down"></i>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <!-- Nomaini saites uz savām GitHub apakšlapām (piem., par-mums.html), kad tās izveidosi -->
+                <a href="#par-mums"><i class="fas fa-info-circle"></i> Par mums</a>
+                <a href="#pakalpojumi"><i class="fas fa-tools"></i> Pakalpojumi</a>
+                <a href="#rekviziti"><i class="fas fa-file-invoice"></i> Rekvizīti</a>
             </div>
         </div>
-    </nav>
 
-    <!-- GALVENĀ KARTĪTE (Ļoti noapaļota, centrēta, bez zilās krāsas) -->
-    <div class="max-w-md mx-auto px-4 my-12 text-center">
-        <div class="bg-[#111827] border border-gray-800 rounded-[32px] p-8 md:p-10 shadow-2xl">
-            <!-- Profila bilde -->
-            <div class="flex justify-center mb-6">
-                <img src="profilu.jpg" alt="Profils" class="w-28 h-28 rounded-full object-cover ring-4 ring-emerald-500/30 shadow-xl">
-            </div>
-            
-            <h1 class="text-2xl font-bold tracking-tight text-white mb-2">Tavs Vārds Uzvārds</h1>
-            <p class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-4">Elektromateriālu Tirdzniecība</p>
-            <p class="text-sm text-gray-400 leading-relaxed mb-8">Augstas kvalitātes moduļiekārtas, sadales skapji un industriālā automātika tieši no noliktavas.</p>
-            
-            <!-- Pogas -->
-            <div class="space-y-3" id="kontakti">
-                <a href="tel:+37120000000" class="flex items-center justify-center gap-3 w-full bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold py-3.5 px-6 rounded-2xl transition shadow-lg shadow-emerald-500/10">
-                    <i class="fas fa-phone-alt"></i> Sazināties pa tālruni
-                </a>
-                <a href="https://facebook.com" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#1e293b] hover:bg-[#334155] text-white font-medium py-3.5 px-6 rounded-2xl border border-gray-700 transition">
-                    <i class="fab fa-facebook-f text-blue-400"></i> Facebook lapa
-                </a>
-                <a href="https://tiktok.com" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#1e293b] hover:bg-[#334155] text-white font-medium py-3.5 px-6 rounded-2xl border border-gray-700 transition">
-                    <i class="fab fa-tiktok text-pink-400"></i> TikTok profils
-                </a>
+        <!-- 4. Sociālie tīkli un ātrie kontakti -->
+        <div class="social-grid">
+            <!-- Nomaini saites uz saviem reālajiem profiliem -->
+            <a href="https://facebook.com" target="_blank" class="social-btn">
+                <i class="fab fa-facebook-f" style="color: #1877F2;"></i> Facebook
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="social-btn">
+                <i class="fab fa-tiktok" style="color: #00f2fe;"></i> TikTok
+            </a>
+            <!-- Ieraksti savu epastu aiz "mailto:" -->
+            <a href="mailto:info@nlelektro.lv" class="social-btn">
+                <i class="fas fa-envelope" style="color: #ffcc00;"></i> E-pasts
+            </a>
+            <!-- Ieraksti savu tālruni aiz "tel:" -->
+            <a href="tel:+37120000000" class="social-btn">
+                <i class="fas fa-phone-alt" style="color: #25D366;"></i> Zvanīt
+            </a>
+        </div>
+
+        <!-- 5. Sadarbības partneru zīmoli -->
+        <div class="partners-section">
+            <h3 class="partners-title">Komponentes un sadarbības partneri</h3>
+            <div class="partners-logos">
+                <span class="partner-tag">SIEMENS</span>
+                <span class="partner-tag">ABB</span>
+                <span class="partner-tag">SCHNEIDER ELECTRIC</span>
+                <span class="partner-tag">PHOENIX CONTACT</span>
+                <span class="partner-tag">FINDER</span>
+                <span class="partner-tag">EATON</span>
             </div>
         </div>
+
     </div>
 
-    <!-- PRODUKTU SADAĻA (Izkārtojums pa divi mobilajā, noapaļoti stūri) -->
-    <div class="max-w-5xl mx-auto px-6 my-16" id="produkti">
-        <h2 class="text-center text-xs font-bold tracking-widest text-emerald-400 uppercase mb-8">Preču Kategorijas</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            
-            <!-- 1. Produkts -->
-            <div class="bg-[#111827] border border-gray-800 rounded-2xl p-5 text-center shadow-md transition hover:-translate-y-1">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-bolt text-lg"></i>
-                </div>
-                <h3 class="text-sm font-bold text-white mb-1">Moduļiekārtas</h3>
-                <p class="text-xs text-gray-500 mb-3">Automāti un noplūdnieki.</p>
-                <span class="text-[10px] font-semibold bg-gray-800 text-gray-300 px-2 py-1 rounded-md">ABB / Schneider</span>
-            </div>
+    <!-- JavaScript funkcija priekš Dropdown atvēršanas/aizvēršanas -->
+    <script>
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-            <!-- 2. Produkts -->
-            <div class="bg-[#111827] border border-gray-800 rounded-2xl p-5 text-center shadow-md transition hover:-translate-y-1">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-box text-lg"></i>
-                </div>
-                <h3 class="text-sm font-bold text-white mb-1">Sadales Skapji</h3>
-                <p class="text-xs text-gray-500 mb-3">Iebūvējami un virsapmetuma.</p>
-                <span class="text-[10px] font-semibold bg-gray-800 text-gray-300 px-2 py-1 rounded-md">Hager / Eaton</span>
-            </div>
-
-            <!-- 3. Produkts -->
-            <div class="bg-[#111827] border border-gray-800 rounded-2xl p-5 text-center shadow-md transition hover:-translate-y-1">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-shield-alt text-lg"></i>
-                </div>
-                <h3 class="text-sm font-bold text-white mb-1">Pārspriegumi</h3>
-                <p class="text-xs text-gray-500 mb-3">T1, T2 klašu aizsardzība.</p>
-                <span class="text-[10px] font-semibold bg-gray-800 text-gray-300 px-2 py-1 rounded-md">Phoenix / Hager</span>
-            </div>
-
-            <!-- 4. Produkts -->
-            <div class="bg-[#111827] border border-gray-800 rounded-2xl p-5 text-center shadow-md transition hover:-translate-y-1">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-industry text-lg"></i>
-                </div>
-                <h3 class="text-sm font-bold text-white mb-1">Industriālās daļas</h3>
-                <p class="text-xs text-gray-500 mb-3">Kontaktori, releji, spailes.</p>
-                <span class="text-[10px] font-semibold bg-gray-800 text-gray-300 px-2 py-1 rounded-md">Siemens / TME</span>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- ZĪMOLU JOSLA -->
-    <div class="max-w-5xl mx-auto px-6 my-12 border-t border-gray-800 pt-8 text-center">
-        <p class="text-[10px] font-bold tracking-widest text-gray-500 uppercase mb-5">Piedāvātie Zīmoli</p>
-        <div class="flex flex-wrap justify-content-center items-center justify-center gap-6 md:gap-8">
-            <img src="tme.svg" alt="TME" class="partner-logo">
-            <img src="abb.svg" alt="ABB" class="partner-logo">
-            <img src="schneider.svg" alt="Schneider" class="partner-logo">
-            <img src="hager.svg" alt="Hager" class="partner-logo">
-            <img src="siemens.svg" alt="Siemens" class="partner-logo">
-            <img src="eaton.svg" alt="Eaton" class="partner-logo">
-            <img src="phoenix.svg" alt="Phoenix" class="partner-logo">
-        </div>
-    </div>
+        // Aizver dropdown, ja lietotājs noklikšķina kaut kur citur ekrānā
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn') && !event.target.matches('.dropdown-btn *')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
