@@ -67,6 +67,15 @@
             color: #aaaaaa;
             margin-bottom: 30px;
             font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Akcents jaunajam tirdzniecības tekstam */
+        .highlight-text {
+            color: #ffcc00;
+            font-weight: 600;
+            display: block;
+            margin-top: 5px;
         }
 
         /* 3. Dropdown izvēlne navigācijai */
@@ -206,13 +215,15 @@
         
         <!-- 1. Logo vieta pa vidu -->
         <div class="logo-area">
-            <!-- Kad Tev būs bildes fails, aizvieto tekstu ar: <img src="logo.png" alt="NL Elektro Logo"> -->
             <div class="logo-placeholder">NL Elektro</div>
         </div>
 
-        <!-- 2. Nodarbošanās teksts -->
+        <!-- 2. Nodarbošanās teksts ar jauno tirdzniecības info -->
         <h1 class="brand-name">NL ELEKTRO</h1>
-        <p class="brand-subtitle">Rūpnieciskā automātika &bull; Elektromontāža &bull; Skapju būvniecība</p>
+        <p class="brand-subtitle">
+            Rūpnieciskā automātika &bull; Elektromontāža &bull; Skapju būvniecība
+            <span class="highlight-text">Komponenšu tirdzniecība par konkurētspējīgām cenām</span>
+        </p>
 
         <!-- 3. Dropdown izvēlne lapām -->
         <div class="dropdown">
@@ -220,27 +231,25 @@
                 Izvēlies sadaļu... <i class="fas fa-chevron-down"></i>
             </button>
             <div id="myDropdown" class="dropdown-content">
-                <!-- Nomaini saites uz savām GitHub apakšlapām (piem., par-mums.html), kad tās izveidosi -->
                 <a href="#par-mums"><i class="fas fa-info-circle"></i> Par mums</a>
                 <a href="#pakalpojumi"><i class="fas fa-tools"></i> Pakalpojumi</a>
+                <!-- Jaunā tirdzniecības sadaļa izvēlnē -->
+                <a href="#tirdznieciba"><i class="fas fa-shopping-cart"></i> Komponenšu tirdzniecība</a>
                 <a href="#rekviziti"><i class="fas fa-file-invoice"></i> Rekvizīti</a>
             </div>
         </div>
 
         <!-- 4. Sociālie tīkli un ātrie kontakti -->
         <div class="social-grid">
-            <!-- Nomaini saites uz saviem reālajiem profiliem -->
             <a href="https://facebook.com" target="_blank" class="social-btn">
                 <i class="fab fa-facebook-f" style="color: #1877F2;"></i> Facebook
             </a>
             <a href="https://tiktok.com" target="_blank" class="social-btn">
                 <i class="fab fa-tiktok" style="color: #00f2fe;"></i> TikTok
             </a>
-            <!-- Ieraksti savu epastu aiz "mailto:" -->
             <a href="mailto:info@nlelektro.lv" class="social-btn">
                 <i class="fas fa-envelope" style="color: #ffcc00;"></i> E-pasts
             </a>
-            <!-- Ieraksti savu tālruni aiz "tel:" -->
             <a href="tel:+37120000000" class="social-btn">
                 <i class="fas fa-phone-alt" style="color: #25D366;"></i> Zvanīt
             </a>
@@ -261,13 +270,12 @@
 
     </div>
 
-    <!-- JavaScript funkcija priekš Dropdown atvēršanas/aizvēršanas -->
+    <!-- JavaScript funkcija priekš Dropdown -->
     <script>
         function toggleDropdown() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Aizver dropdown, ja lietotājs noklikšķina kaut kur citur ekrānā
         window.onclick = function(event) {
             if (!event.target.matches('.dropdown-btn') && !event.target.matches('.dropdown-btn *')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
