@@ -2,21 +2,61 @@
 <html lang="lv">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mana Vizītkarte</title>
+    <!-- Šis pieslēdz modernas ikonas pogām -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f9; padding: 50px; }
-        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
-        h1 { color: #333; }
-        p { color: #666; }
-        a { color: #007bff; text-decoration: none; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a, #1e293b); color: #f8fafc; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; padding: 40px 30px; border-radius: 24px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #38bdf8; margin-bottom: 20px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+        h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .headline { font-size: 1rem; color: #94a3b8; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .links-container { display: flex; flex-direction: column; gap: 15px; }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; color: #fff; }
+        .btn i { font-size: 1.2rem; width: 20px; }
+        
+        /* Pogas specifiskās krāsas */
+        .btn-fb { background: #1877f2; }
+        .btn-fb:hover { background: #145dbf; transform: translateY(-2px); }
+        .btn-tt { background: #000000; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-tt:hover { background: #252525; transform: translateY(-2px); }
+        .btn-email { background: #0ea5e9; }
+        .btn-email:hover { background: #0284c7; transform: translateY(-2px); }
+        .btn-phone { background: #10b981; }
+        .btn-phone:hover { background: #059669; transform: translateY(-2px); }
     </style>
 </head>
 <body>
+
     <div class="card">
+        <!-- Tava bilde (Nomaini profilu.jpg uz savas bildes faila nosaukumu) -->
+        <img src="profilu.jpg" alt="Profila bilde" class="profile-img">
+        
+        <!-- Tavi teksti -->
         <h1>Jūsu Vārds Uzvārds</h1>
-        <p>Mana profesija vai nodarbošanās</p>
-        <p>Email: <a href="mailto:mans@pasts.lv">mans@pasts.lv</a></p>
-        <p>Telefons: +371 20000000</p>
+        <div class="headline">Elektronikas komponentre/Industriālā elektronika</div>
+        
+        <!-- Sociālo tīklu un kontaktu pogas -->
+        <div class="links-container">
+            <a href="https://facebook.com" target="_blank" class="btn btn-fb">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            
+            <a href="https://tiktok.com" target="_blank" class="btn btn-tt">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            
+            <a href="mailto:tavs@epasts.lv" class="btn btn-email">
+                <i class="fas fa-envelope"></i> E-pasts
+            </a>
+            
+            <a href="tel:+37120000000" class="btn btn-phone">
+                <i class="fas fa-phone-alt"></i> Zvanīt
+            </a>
+        </div>
     </div>
+
 </body>
 </html>
